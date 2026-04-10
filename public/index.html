@@ -34,12 +34,6 @@
           </label>
           <div class="row">
             <button class="btn" type="submit">Generar token</button>
-            <button class="btn btnSecondary" id="fillUser" type="button">
-              Llenar USER
-            </button>
-            <button class="btn btnSecondary" id="fillAdmin" type="button">
-              Llenar ADMIN
-            </button>
           </div>
         </form>
 
@@ -79,16 +73,6 @@
         const text = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2);
         outputEl.textContent = text;
       }
-
-      $("fillUser").addEventListener("click", () => {
-        userEl.value = "USER";
-        passEl.value = "USER";
-      });
-
-      $("fillAdmin").addEventListener("click", () => {
-        userEl.value = "ADMIN";
-        passEl.value = "ADMIN";
-      });
 
       $("clear").addEventListener("click", () => {
         outputEl.textContent = "";
