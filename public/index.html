@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express + JWT + Roles</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Login</h1>
+        <p class="muted">
+          TouchMyAPI™
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Login</h2>
+        <form id="loginForm" class="form">
+          <label class="label">
+            Usuario
+            <input id="user" class="input" placeholder="ingrese usuario" />
+          </label>
+          <label class="label">
+            Password
+            <input
+              id="password"
+              class="input"
+              placeholder="ingrese contraseña"
+              type="password"
+            />
+          </label>
+          <div class="row">
+            <button class="btn" type="submit">Generar token</button>
+          </div>
+        </form>
+
+        <div class="stack">
+          <label class="label">
+            Token
+            <textarea id="token" class="textarea" rows="4" spellcheck="false"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Request</h2>
+        <div class="row">
+          <button class="btn" id="callRequest" type="button">GET</button>
+          <button class="btn btnSecondary" id="clear" type="button">Limpiar</button>
+        </div>
+
+        <pre id="output" class="output" aria-live="polite"></pre>
+      </section>
+
+      <footer class="footer muted"></footer>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      const loginForm = $("loginForm");
+      const userEl = $("user");
+      const passEl = $("password");
+      const tokenEl = $("token");
+      const outputEl = $("output");
+
+      function log(obj) {
+        const text = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2);
+        outputEl.textContent = text;
+      }
+
+      $("clear").addEventListener("click", () => {
+        outputEl.textContent = "";
+      });
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        log("Haciendo login...");
+        tokenEl.value = "";
+
+        const res = await fetch("/Login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user: userEl.value, password: passEl.value }),
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          log({ status: res.status, ...data });
+          return;
+        }
+
+        tokenEl.value = data.token || "";
+        log({ status: res.status, tokenPreview: (data.token || "").slice(0, 24) + "..." });
+      });
+
+      $("callRequest").addEventListener("click", async () => {
+        log("Llamando /Request...");
+        const token = tokenEl.value.trim();
+
+        const res = await fetch("/Request", {
+          method: "GET",
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
+
+        const data = await res.json().catch(() => ({}));
+        log({ status: res.status, ...data });
+      });
+    </script>
+  </body>
+</html>
+

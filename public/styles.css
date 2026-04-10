@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1100px 520px at 15% 10%, #d9fbe8 0%, #f4fff8 40%, #f7faf8 100%);
+  color: #0f172a;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.95em;
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.20);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+}
+
+.header {
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  font-size: 28px;
+}
+
+.muted {
+  color: rgba(15, 23, 42, 0.68);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
+  margin-top: 14px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(2, 6, 23, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: rgba(16, 185, 129, 0.65);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.16);
+}
+
+.textarea {
+  resize: none;
+  min-height: 96px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  grid-column: 1 / -1;
+}
+
+.stack {
+  margin-top: 12px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(5, 150, 105, 0.28);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.92));
+  color: #052e1b;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn:hover {
+  filter: brightness(1.06);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btnSecondary {
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #064e3b;
+}
+
+.output {
+  margin: 12px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(2, 6, 23, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  overflow: auto;
+  min-height: 56px;
+}
+
+.footer {
+  margin-top: 18px;
+  font-size: 13px;
+}
+

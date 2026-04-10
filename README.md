@@ -1,0 +1,3 @@
+# TAREA DESPLEGADA: https://taller-express-v2-touchmyapi.onrender.com
+
+Profe permitanos excusarnos  por la hora de entrega, lo que pasó fue que aparecía (antes de las 9:30) un error de permisos para hacer push en el repositorio taller-express, estuvimos viendo por qué y al final tuvimos que cambiar el origen para este repositorio donde sí nos dejó hacer push, sin embargo tratando de solucionar el problema se nos fue mucho tiempo, gracias por su comprensión.
