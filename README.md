@@ -1,3 +1,3 @@
-=======
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Wxaf-Cfj)
->>>>>>> ab92f1c7178f0a1746c3af7b7925be79ad3bed9c
+# TAREA DESPLEGADA: https://taller-express-v2-touchmyapi.onrender.com
+
+Profe permitanos excusarnos  por la hora de entrega, lo que pasó fue que aparecía (antes de las 9:30) un error de permisos para hacer push en el repositorio taller-express, estuvimos viendo por qué y al final tuvimos que cambiar el origen para este repositorio donde sí nos dejó hacer push, sin embargo tratando de solucionar el problema se nos fue mucho tiempo, gracias por su comprensión.
